@@ -1,0 +1,949 @@
+html {
+  font-size: 7px;
+}
+@media (min-width: 365px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (min-width: 576px) {
+  html {
+    font-size: 11px;
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-container {
+  height: 100vh;
+  background-color: rgb(12, 17, 38);
+  overflow-y: auto;
+}
+div {
+  display: block;
+}
+.header {
+  height: 10vh;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+}
+.logo img {
+  width: auto;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  margin-top: 0.8rem;
+  max-height: 6rem;
+  max-width: 18rem;
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.fav {
+  color: rgb(206, 207, 211);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 30px;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.search-box-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 55%;
+}
+.search-box {
+  padding: 0.5rem;
+  background-color: rgb(18, 34, 63);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin-right: 4rem;
+}
+.search-box i {
+  color: white;
+}
+.fa-solid {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+}
+.fa-solid {
+  -webkit-font-smoothing: antialised;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.search-box input {
+  font-size: 1.1rem;
+  padding: 0.6rem 0.6rem 0.6rem 0.1rem;
+  background-color: transparent;
+  width: 80%;
+  height: 0.7rem;
+  border: 0px;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  color: white;
+  outline: none;
+}
+.fa-bell {
+  color: rgb(231, 231, 230);
+  margin-right: 50px;
+}
+.profile-photo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  margin-left: 0.8rem;
+}
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #454545;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  height: 74px;
+  margin-left: -5px;
+}
+#footer-song-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+}
+#footer-song-info > div {
+  margin: 1vh;
+}
+#footer-song-image {
+  height: 4rem;
+  width: 4rem;
+  margin: 1vh;
+  background: url(https://cdn.pixabay.com/photo/2017/11/15/09/28/music-player-2951399_1280.jpg)
+    center no-repeat;
+  background-size: contain;
+}
+#footer-song-name {
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.subtitle {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+  margin: 0.1rem;
+}
+#player {
+  width: 40%;
+  min-width: 200px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#player > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#player-control {
+  width: 50%;
+}
+#player-slider-container {
+  width: 100%;
+}
+input[type="range"] {
+  width: 80%;
+}
+input[type="range" i] {
+  appearance: auto;
+  cursor: default;
+  color: -internal-light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
+  padding: initial;
+  border: initial;
+  margin: 2px;
+}
+.player-extras {
+  display: flex;
+  width: 20%;
+  min-width: 115px;
+  justify-content: space-around;
+  align-items: center;
+}
+.volume-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main {
+  height: 150%;
+  width: 65%;
+  margin-top: 10vh;
+  margin-left: 4%;
+  margin-right: 3%;
+  padding-bottom: 20vh;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.new-releases {
+  white-space: nowrap;
+}
+.new-releases img {
+  height: 35vh;
+  width: 35vh;
+  text-align: center;
+  padding: 4px;
+  margin-top: 50px;
+  transition: transform 0.7s ease-in-out;
+}
+.new-releases img:hover {
+  transform: scale(1.1);
+  transition: transform 0.4s ease-in-out;
+}
+/*Begining of latest release section*/
+#latest-release-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  margin-right: 5vw;
+}
+#latest-release h1 {
+  font-family: helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: -5px;
+  margin-top: 6vh;
+  margin-bottom: -14px;
+}
+#latest-release-item {
+  height: auto;
+  width: 300px;
+  color: white;
+  font-family: helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+#latest-item-title {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0vw;
+}
+#latest-release-img {
+  height: 100px;
+  width: 100px;
+  padding: 0px;
+  background-image: url(images/Taylor_Swift_-_Willow.png);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+}
+#latest-release-img-button {
+  margin-top: 40%;
+}
+#latest-release-img-button a {
+  color: white;
+}
+#latest-release-img:hover {
+  opacity: 0.8;
+}
+#latest-release-img:hover > .hide {
+  display: block; /*Play button is displayed on hover*/
+}
+/*Dropdown bar of latest release section*/
+#dropdown {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  margin-left: 23vw;
+}
+#dropdown-menu {
+  height: 0px;
+  width: 0px;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  font-family: sans-serif;
+  color: #4b5c5e;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  display: none;
+}
+#dropdown-list {
+  display: none;
+  margin-bottom: 1rem;
+}
+#dropdown-list a {
+  text-decoration: none;
+  color: #4b5c5e;
+}
+#dropdown:hover #dropdown-menu {
+  height: 100px;
+  width: 200px;
+  display: block;
+}
+#dropdown:hover #dropdown-list {
+  display: block;
+}
+aside {
+  height: auto;
+  width: 28%;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin-top: 8%;
+  margin-left: -1vw;
+  vertical-align: top;
+}
+/*End of Dropdown bar of latest release section*/
+/*End of latest release section*/
+/*Begining of popular artist section*/
+#popular-artists h1 {
+  font-family: helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 6vh;
+  margin-left: -5px;
+  margin-bottom: -14px;
+}
+#popular-artist-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#popular-artists-image {
+  background-image: url(images/1200px-Prateek_Kuhad_New.jpg);
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-image-2 {
+  background-image: url(images/arijitsingh.webp);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-image-3 {
+  background-image: url(images/jubinnautiyal.webp);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-image-4 {
+  background-image: url(images/Armaan-Malik.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-image-5 {
+  background-image: url(images/neha-kakkar.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-image-6 {
+  background-image: url(images/Armaan-Malik.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+#popular-artists-text {
+  text-align: center;
+  margin-top: 40%;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#popular-artists-text a {
+  text-decoration: none;
+  color: white;
+}
+#popular-artists-image:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2); /*On hovering a shadow appears*/
+  opacity: 0.8;
+}
+#popular-artists-image:hover > .hide {
+  display: block;
+}
+#popular-artists-image-2:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+  opacity: 0.8;
+}
+#popular-artists-image-2:hover > .hide {
+  display: block;
+}
+#popular-artists-image-3:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+  opacity: 0.8;
+}
+#popular-artists-image-3:hover > .hide {
+  display: block;
+}
+#popular-artists-image-4:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+  opacity: 0.8;
+}
+#popular-artists-image-4:hover > .hide {
+  display: block;
+}
+#popular-artists-image-5:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+  opacity: 0.8;
+}
+#popular-artists-image-5:hover > .hide {
+  display: block;
+}
+#popular-artists-image-6:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+  opacity: 0.8;
+}
+#popular-artists-image-6:hover > .hide {
+  display: block;
+}
+/*End of popular artists section*/
+/*Begining of playlist section*/
+#playlist {
+  width: auto;
+  height: auto;
+  background-color: #0d0065;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  align-self: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+#playlist-item-1 {
+  background-image: url(images/love.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+#playlist-item-1:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+#playlist-item-2 {
+  background-image: url(images/retro.webp);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+#playlist-item-2:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+
+#playlist-item-3 {
+  background-image: url(images/chill.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+#playlist-item-3:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+#playlist-item-4 {
+  background-image: url(images/pop.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+#playlist-item-4:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+#playlist-item-5 {
+  background-image: url(images/workout.png);
+  background-size: cover;
+  background-position: center;
+
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+#playlist-item-5:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+#playlist-item-6 {
+  background-image: url(images/rock.png);
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 120px;
+  border: 0px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+#playlist-item-6:hover {
+  box-shadow: 0px 0px 9px 5px rgba(230, 196, 196, 0.2);
+}
+/*End of playlist section*/
+/*Genre Section*/
+#genre {
+  padding-top: 100px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: -5%;
+}
+#genre-item {
+  height: auto;
+  width: auto;
+  margin-top: -5%;
+  padding: 0px;
+  transition: transform 0.7s ease-in-out;
+}
+#genre-item-background-1 {
+  height: 150px;
+  width: 250px;
+  background-image: url(images/party.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 01;
+  padding: 0px;
+  color: lightgray;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  line-height: 8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#genre-item:hover {
+  transform: scale(0.9);
+}
+#genre-item-background-2 {
+  height: 150px;
+  width: 250px;
+  background-image: url(images/electronic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px;
+  margin-left: -10px;
+  color: lightgray;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  line-height: 8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#genre-item-background-3 {
+  height: 150px;
+  width: 250px;
+  background-image: url(images/road.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px;
+  margin-left: -20px;
+  color: lightgray;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 8rem;
+  margin-bottom: 2rem;
+}
+#genre-item-text {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 2%;
+  font-size: 1.3rem;
+  padding-top: 30px;
+  opacity: 1;
+  font-weight: 600;
+}
+/*End of genre section*/
+/*Latest Songs section*/
+#latest-songs h1 {
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 15px;
+  margin-top: 6vh;
+  margin-left: -5px;
+  margin-bottom: -14px;
+}
+#latest-songs-list {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#latest-songs-item {
+  height: 150px;
+  width: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+#latest-songs-item-img-1 {
+  background-image: url(images/Justin_Bieber_-_Anyone.png);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+#latest-songs-item-img-1:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-1:hover > .hide {
+  display: block; /*Play button displayed on hover*/
+}
+#latest-songs-item-img-2 {
+  background-image: url(images/Hey-Boy-art.png);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#latest-songs-item-img-2:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-2:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-3 {
+  background-image: url(images/afterglow.png);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#latest-songs-item-img-3:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-3:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-4 {
+  background-image: url(images/vibez.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#latest-songs-item-img-4:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-4:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-5 {
+  background-image: url(images/higher.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#latest-songs-item-img-5:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-5:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-6 {
+  background-image: url(images/kaha-ho-tum.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#latest-songs-item-img-6:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-6:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-7 {
+  background-image: url(images/dil-bechara.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#latest-songs-item-img-7:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-7:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-8 {
+  background-image: url(images/sun-toh.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#latest-songs-item-img-8:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-8:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-9 {
+  background-image: url(images/oh-saiyaan.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#latest-songs-item-img-9:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-9:hover > .hide {
+  display: block;
+}
+#latest-songs-item-img-10 {
+  background-image: url(images/rabba-meri-kari.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#latest-songs-item-img-10:hover {
+  opacity: 0.8;
+}
+#latest-songs-item-img-10:hover > .hide {
+  display: block;
+}
+#latest-songs-item-button {
+  margin-top: 0%;
+  position: relative;
+  top: 37%;
+}
+#latest-songs-item-title {
+  font-family: sans-serif;
+  color: white;
+  text-align: left;
+  padding: 5px;
+}
+#play {
+  margin-top: 0%;
+}
+/*End of latest songs section*/
+/*End of main*/
+
+/*Aside*/
+#aside-header {
+  height: auto;
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2vh;
+}
+#aside-title {
+  height: auto;
+  width: auto;
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  display: inline-flex;
+}
+#aside-dropdown {
+  margin-top: 1vh;
+  display: inline-flex;
+}
+#aside-dropdown select {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: #1db954;
+  font-weight: bold;
+  background-color: #070130;
+  border: 0px;
+}
+#aside-dropdown option {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: black;
+  background-color: white;
+  border: 0px;
+}
+#aside-dropdown select:focus {
+  outline: none;
+}
+#queue-item {
+  height: 100px;
+  width: 320px;
+  background-color: rgb(1, 72, 130, 0.5);
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 1vh;
+  border-radius: 5px;
+}
+#queue-item-img {
+  height: 80px;
+  width: 80px;
+  padding: 1%;
+  margin-top: 1.5vh;
+  margin-left: 1vw;
+  background-image: url(images/Taylor_Swift_-_Willow.png);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 3px;
+}
+#queue-item-title {
+  font-family: sans-serif;
+  color: white;
+  font-size: 0.8rem;
+  position: relative;
+  top: 5vh;
+}
+#queue-favourite {
+  margin-left: 180px;
+  margin-top: -30px;
+  color: white;
+  font-size: 1.2rem;
+}
+/*End of aside section*/
